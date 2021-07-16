@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DCS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="images/favicon.ico" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light ">
+            <a class="navbar-brand" href="#">Darvin Casing Store</a>
+        </nav>
+    </div>
+
+    <section class="page-banner-area page-project">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9 col-md-12 col-12 text-center">
+                    <div class="page-banner-content">
+                        <h1 class="display-4 font-weight-bold">Pilih Casing PC mu!</h1>
+                        <p>Casing yang keren akan memperindah PC mu</p>
+                    </div>
+                </div>
+            </div> <!-- / .row -->
+        </div> <!-- / .container -->
+    </section>
+
+    <div class="container">
+        <div class="row justify-content-center mainPart">
+
+            <div class="section-heading mainPart">
+                <h2 class="section-title">
+                    Data Casing yang tersedia
+                </h2>
+                <p>
+                    Pilih salah satu dari menu berikut
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <button class="showData">
+            Tampilkan
+        </button>
+    </div>
+    <div class="container">
+        <div id="tombol" class="d-flex justify-content-center">
+            <button type="button" class="addData" data-toggle="modal" data-target="#exampleModal">
+                Add
+            </button>
+            <button class="addData" data-toggle="modal" data-target="#exampleModal2">
+                Edit
+            </button>
+            <button class="addData" data-toggle="modal" data-target="#exampleModal3">
+                Delete
+            </button>
+        </div>
+
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Tambah Casing</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="myForm">
+                        <div class="form-group">
+                            <label for="userId">Nama Casing</label>
+                            <input id="myName" name="name" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="myJob">Form Factor</label>
+                            <input id="myFF" name="form_factor" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="userId">Brand</label>
+                            <input id="myBrand" name="brand" class="form-control">
+                        </div>
+
+                        <div class="form-group"><label for="userId">Price</label>
+                            <input id="myPrice" name="price" class="form-control">
+                        </div>
+
+                        <div class="d-flex justify-content-center">
+                            <input id="postSubmit" type="submit" value="Tambah Casing" class="btn btn-success">
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Tabel</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="editCase">
+                        <div id="labelEdit">
+                            <label>ID</label>
+                        </div>
+
+                        <div class="d-flex justify-content-center form-group">
+                            <div>
+                                <input name="id_case" id="editID" class="form-control" placeholder="ID pilihan">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="d-flex justify-content-center form-group">
+                                <button type="button" id="chooseID" class="btn btn-outline-warning">Choose</button>
+
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center form-group">
+                            <input name="name" id="editName" class="form-control" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <input name="form_factor" id="editFF" class="form-control" placeholder="Form Factor">
+                        </div>
+                        <div class="form-group">
+                            <input name="brand" id="editBrand" class="form-control" placeholder="Brand">
+                        </div>
+                        <div class="form-group">
+                            <input name="price" id="editPrice" class="form-control" placeholder="Harga">
+                        </div>
+
+                        <div class="d-flex justify-content-center">
+                            <input id="submitEdit" type="submit" class="btn btn-primary mb-2" value="Edit!">
+                        </div>
+                    </form>
+                </div>
+                <div id="showEdit">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete Data</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="delForm">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">ID</label>
+                            <input class="form-control" placeholder="Nomor ID" name="id_case">
+                            <small id="emailHelp" class="form-text text-muted">Masukkan nomor ID casing yang akan di
+                                delete</small>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <input id="deleteSubmit" type="submit" value="Delete" class="btn btn-danger">
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="" class="table-responsive-md">
+        <table id="showTabel" class="table">
+        </table>
+    </div>
+
+
+
+
+    <script src="index.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
